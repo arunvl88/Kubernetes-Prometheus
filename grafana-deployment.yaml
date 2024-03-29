@@ -1,0 +1,42 @@
+# Grafana deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+      - name: grafana
+        image: grafana/grafana:latest
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: grafana-config-volume
+          mountPath: /etc/grafana
+      volumes:
+      - name: grafana-config-volume
+        configMap:
+          name: grafana-config
+
+# Grafana service (Optional, for external access)
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-service
+spec:
+  selector:
+    app: grafana
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+    nodePort: 31000 # Change if desired
+  type: NodePort
