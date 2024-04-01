@@ -30,3 +30,8 @@ Grafana: http://<your_node_ip>:<nodePort> (e.g., http://192.168.1.10:31000)
 This is a basic example. You might need to configure Prometheus scraping targets and Grafana datasources to monitor your applications.
 Remember to update NodePorts if they conflict with existing services.
 Consider using ConfigMaps to manage configurations for easier updates.
+
+### Further Resources
+
+Prometheus Documentation: https://prometheus.io/docs/introduction/overview/
+Kubernetes Documentation: https://kubernetes.io/docs/home/
