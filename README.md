@@ -15,9 +15,9 @@ ConfigMaps (not defined here) are used to store Prometheus and Grafana configura
 
 Save the YAML content as prometheus-grafana.yaml.
 
-Use `kubectl apply -f prometheus-deployment.yaml` to deploy Prometheus in your cluster.
-Use `kubectl apply -f prometheus-service.yaml` to deploy Prometheus in your cluster.
-Use `kubectl apply -f prometheus-config-map.yaml` to deploy Prometheus in your cluster.
+1. Use `kubectl apply -f prometheus-deployment.yaml` to deploy Prometheus in your cluster.
+2. Use `kubectl apply -f prometheus-service.yaml` to deploy Prometheus in your cluster.
+3. Use `kubectl apply -f prometheus-config-map.yaml` to deploy Prometheus in your cluster.
 
 ### 3. Accessing Prometheus and Grafana:
 
