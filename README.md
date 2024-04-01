@@ -1,5 +1,5 @@
 # Kubernetes-Prometheus
-Integrate Prometheus on Kubernetes
+Prometheus is a tool for monitoring systems and applications. It scrapes data from various sources, often through exporters or APIs. 
 
 ## Explanation:
 
@@ -24,7 +24,7 @@ This file defines a Kubernetes Deployment for running Prometheus pods. It specif
 * Resource Requests and Limits: Memory and CPU resource requests and limits for the Prometheus container.
 * Port: The port on which Prometheus exposes its web UI (usually 9090).
 * ConfigMap: (Optional) A ConfigMap reference containing the Prometheus configuration options.
-* Volume Mounts: Mounts the ConfigMap volume (if used) at the desired path within the container (e.g., /etc/prometheus).
+* Volume Mounts: Mounts the ConfigMap volume (if used) at the desired path within the container (e.g., /etc/prometheus). By mounting /etc/prometheus, the container might be able to access configuration files containing instructions on how to scrape data from locations within the mounted volume (potentially including /etc/prometheus).
 
 2. Use `kubectl apply -f prometheus-service.yaml` to deploy Prometheus in your cluster.
 
